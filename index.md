@@ -1,6 +1,7 @@
 # CSE15L LAB2
 ## PART 1
 In part 1, I will be writing a web server called StringServer that supports the path and behavior described below. It should keep track of a single string that gets added to by incoming requests. <br>
+<br>
 *The following codeblock details the blocks of code written in StringServer.java* <br>
 ```ruby
 import java.io.IOException;
@@ -40,7 +41,7 @@ class StringServer {
 }
 ```
 *The following images details the server outputs:* <br>
-
+<br>
 ![Image](cse15l_lab3.7.jpg) <br>
 **1. Empty Server** <br>
 ![Image](lab2_8.jpg) <br>
