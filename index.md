@@ -45,7 +45,7 @@ class StringServer {
 It is important to note that the main method starts the server. This server is where all of our paths and behaviors will be supported on.
 ![Image](lab2_8.jpg) <br>
 **1. After '/add-message'** <br>
-*==Which methods in your code are called?==* <br>
+==*Which methods in your code are called?*==<br>
 The relevant method that is called to get this output is the 'handleRequest' method. <br>
 <br>
 *What are the relevant arguments to those methods, and the values of any relevant fields of the class?* <br>
