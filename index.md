@@ -1,3 +1,40 @@
 # CSE15L LAB2
 ## PART 1
 In part 1, I will be writing a web server called StringServer that supports the path and behavior described below. It should keep track of a single string that gets added to by incoming requests. <br>
+```ruby
+import java.io.IOException;
+import java.net.URI;
+
+class Handler implements URLHandler {
+    String print = "";
+
+    public String handleRequest(URI url) {
+        if (url.getPath().equals("/")) {
+            return String.format(print);
+        } else if (url.getPath().equals("/add-message")) {
+            System.out.println("Path: " + url.getPath());
+
+            String[] parameters = url.getQuery().split("=");
+            if (parameters[0].equals("s")) {
+                String str = parameters[1];
+                print = print + str + "\n";
+                return print;
+            }
+        }
+        return "404 Not Found!";
+    }
+}
+
+class StringServer {
+    public static void main(String[] args) throws IOException {
+        if(args.length == 0){
+            System.out.println("Missing port number! Try any number between 1024 to 49151");
+            return;
+        }
+
+        int port = Integer.parseInt(args[0]);
+
+        Server.start(port, new Handler());
+    }
+}
+```
