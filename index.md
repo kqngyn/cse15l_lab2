@@ -45,8 +45,12 @@ class StringServer {
 It is important to note that the main method starts the server. This server is where all of our paths and behaviors will be supported on.
 ![Image](lab2_8.jpg) <br>
 **1. After '/add-message'** <br>
-*Which methods in your code are called?* The relevant method that is called to get this output is the 'handleRequest' method. <br>
-*What are the relevant arguments to those methods, and the values of any relevant fields of the class?* Revelvant arguments to this method, and the values of any relevant fields of the class includes "/add-message" of the pathway, additionally the "s" in the query, and our URL. <br>
+*Which methods in your code are called?* <br>
+The relevant method that is called to get this output is the 'handleRequest' method. <br>
+<br>
+*What are the relevant arguments to those methods, and the values of any relevant fields of the class?* <br>
+Revelvant arguments to this method, and the values of any relevant fields of the class includes "/add-message" of the pathway, additionally the "s" in the query, and our URL. <br>
+<br>
 *How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.* 
 
 ![Image](lab2_10.jpg) <br>
