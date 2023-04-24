@@ -1,6 +1,7 @@
 # CSE15L LAB2
 ## PART 1
 In part 1, I will be writing a web server called StringServer that supports the path and behavior described below. It should keep track of a single string that gets added to by incoming requests. <br>
+*The following codeblock details the blocks of code written in StringServer.java* <br>
 ```ruby
 import java.io.IOException;
 import java.net.URI;
@@ -38,3 +39,10 @@ class StringServer {
     }
 }
 ```
+*The following images details the server outputs* <br>
+![Image](cse15l_lab3.7.jpg) <br>
+**1. Empty Server** <br>
+![Image](lab2_8.jpg) <br>
+**2. After '/add-message'** <br>
+![Image](lab2_10.jpg) <br>
+**3. After second '/add-message' , 5he effect of this request is to concatenate a new line (\n) and the string after = to the running string, and then respond with the entire string so far.** <br>
