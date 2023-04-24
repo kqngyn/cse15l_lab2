@@ -39,7 +39,8 @@ class StringServer {
     }
 }
 ```
-*The following images details the server outputs* <br>
+*The following images details the server outputs:* <br>
+
 ![Image](cse15l_lab3.7.jpg) <br>
 **1. Empty Server** <br>
 ![Image](lab2_8.jpg) <br>
