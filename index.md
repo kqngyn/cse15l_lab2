@@ -49,7 +49,7 @@ It is important to note that the main method starts the server. This server is w
 The relevant method that is called to get this output is the `handleRequest` method. <br>
 <br>
 *What are the relevant arguments to those methods, and the values of any relevant fields of the class?* <br>
-Revelvant arguments to this method, and the values of any relevant fields of the class includes `add-message` of the pathway, additionally the "s" in the query, our print value (what will be printed, in this case our value is "Nicki Minaj", and our URL. <br>
+Revelvant arguments to this method, and the values of any relevant fields of the class includes `add-message` of the pathway, additionally the `=s` in the query, our print value (what will be printed, in this case our value is "Nicki Minaj", and our URL. <br>
 <br>
 *How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.* <br>
 The value of printed value changes.  
@@ -57,6 +57,14 @@ The value of printed value changes.
 
 ![Image](lab2_10.jpg) <br>
 **2. After second `/add-message` , the effect of this request is to concatenate a new line (\n) and the string after = to the running string, and then respond with the entire string so far.** <br>
-Which methods in your code are called?
-What are the relevant arguments to those methods, and the values of any relevant fields of the class?
-How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
+*Which methods in your code are called?*<br>
+The relevant method that is called to get this output is the `handleRequest` method. <br>
+<br>
+*What are the relevant arguments to those methods, and the values of any relevant fields of the class?* <br>
+Revelvant arguments to this method, and the values of any relevant fields of the class includes `add-message` of the pathway, additionally the "s" in the query, our print value (what will be printed, in this case our value is "Nicki Minaj", and our URL. <br>
+<br>
+*How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.* <br>
+The value of printed value changes. The url's is pass through the if-statements where the `add-message` path and the `=s` query is identified. From there the string is updated and printed with a new line.
+
+## Part 2
+
