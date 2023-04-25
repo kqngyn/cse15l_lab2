@@ -43,31 +43,31 @@ class StringServer {
 *The following images details the server outputs:* <br>
 <br>
 It is important to note that the main method starts the server. This server is where all of our paths and behaviors will be supported on.
-![Image](lab2_8.jpg) <br>
-**1. After `/add-message`** <br>
+![Image](lab2_8.jpg)<br>
+**1. After `/add-message`**<br>
 *Which methods in your code are called?*<br>
-The relevant method that is called to get this output is the `handleRequest` method. <br>
+The relevant method that is called to get this output is the `handleRequest` method.<br>
 <br>
-*What are the relevant arguments to those methods, and the values of any relevant fields of the class?* <br>
-Revelvant arguments to this method, and the values of any relevant fields of the class includes `add-message` of the pathway, additionally the `=s` in the query, our print value (what will be printed, in this case our value is "Nicki Minaj", and our URL. <br>
+*What are the relevant arguments to those methods, and the values of any relevant fields of the class?*<br>
+Revelvant arguments to this method, and the values of any relevant fields of the class includes `add-message` of the pathway, additionally the `=s` in the query, our print value (what will be printed, in this case our value is "Nicki Minaj", and our URL.<br>
 <br>
-*How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.* <br>
+*How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.*<br>
 The value of printed value changes.  
 
 
 ![Image](lab2_10.jpg) <br>
-**2. After second `/add-message` , the effect of this request is to concatenate a new line (\n) and the string after = to the running string, and then respond with the entire string so far.** <br>
+**2. After second `/add-message` , the effect of this request is to concatenate a new line (\n) and the string after = to the running string, and then respond with the entire string so far.**<br>
 *Which methods in your code are called?*<br>
-The relevant method that is called to get this output is the `handleRequest` method. <br>
+The relevant method that is called to get this output is the `handleRequest` method.<br>
 <br>
 *What are the relevant arguments to those methods, and the values of any relevant fields of the class?* <br>
-Revelvant arguments to this method, and the values of any relevant fields of the class includes `add-message` of the pathway, additionally the "s" in the query, our print value (what will be printed, in this case our value is "Nicki Minaj", and our URL. <br>
+Revelvant arguments to this method, and the values of any relevant fields of the class includes `add-message` of the pathway, additionally the "s" in the query, our print value (what will be printed, in this case our value is "Nicki Minaj", and our URL.<br>
 <br>
-*How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.* <br>
+*How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.*<br>
 The value of printed value changes. The url's is pass through the if-statements where the `add-message` path and the `=s` query is identified. From there the string is updated and printed with a new line.
 
 ## Part 2
-1. A failure-inducing input for the buggy program I implemented was: <br>
+1. A failure-inducing input for the buggy program I implemented was:<br>
 ```ruby
   //two added tests
 @Test
@@ -77,7 +77,7 @@ public void testReversed1() {
 }
 ```
 <br>
-Here our first `int` array has the elements of `{1,1,1}` with the expected output to be `{1,1,1}`. <br>
+Here our first `int` array has the elements of `{1,1,1}` with the expected output to be `{1,1,1}`.<br>
 <br>
 2. An input that doesn't induce a failure, as a JUnit test and any associated code is:
 ```ruby
@@ -88,12 +88,12 @@ public void testReversed2() {
 }
 ```
 <br>
-3. The sympton, as the output of running the tests was 0 when expected was 1. <br>
-4. The bug, as the before-and-after code change required to fix it. <br>
+3. The sympton, as the output of running the tests was 0 when expected was 1.<br>
+4. The bug, as the before-and-after code change required to fix it.<br>
 *Before* <br>
-![Image](lab3_4.jpg) <br>
+![Image](lab3_4.jpg)<br>
 *After* <br>
-![Image](lab3_5.jpg) <br>
+![Image](lab3_5.jpg)<br>
 <br>
 
 ## Part 3
