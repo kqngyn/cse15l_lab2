@@ -67,8 +67,34 @@ Revelvant arguments to this method, and the values of any relevant fields of the
 The value of printed value changes. The url's is pass through the if-statements where the `add-message` path and the `=s` query is identified. From there the string is updated and printed with a new line.
 
 ## Part 2
-1. A failure-inducing input for the buggy program, as a JUnit test and any associated code (write it as a code block in Markdown)
-2. An input that doesn’t induce a failure, as a JUnit test and any associated code (write it as a code block in Markdown)
-3. The symptom, as the output of running the tests (provide it as a screenshot of running JUnit with at least the two inputs above)
-4. The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)
-5. Briefly describe why the fix addresses the issue.
+1. A failure-inducing input for the buggy program I implemented was: <br>
+```ruby
+  //two added tests
+@Test
+public void testReversed1() {
+  int[] input1 = {1,1,1};
+  assertArrayEquals(new int[]{1,1,1}, ArrayExamples.reversed(input1));
+}
+```
+<br>
+Here our first `int` array has the elements of `{1,1,1}` with the expected output to be `{1,1,1}`. <br>
+<br>
+2. An input that doesn't induce a failure, as a JUnit test and any associated code is:
+```ruby
+@Test
+public void testReversed2() {
+  int[] input2 = {2,4,6};
+  assertArrayEquals(new int[]{6,4,2}, ArrayExamples.reversed(input2));
+}
+```
+<br>
+3. The sympton, as the output of running the tests was 0 when expected was 1. <br>
+4. The bug, as the before-and-after code change required to fix it. <br>
+*Before* <br>
+![Image](lab3_4.jpg) <br>
+*After* <br>
+![Image](lab3_5.jpg) <br>
+<br>
+
+## Part 3
+In this lab, I learned how to identify symptoms. I also learned the interworkings of servers and how to create a web server of my own. This includes writing pathways to the URL.
