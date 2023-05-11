@@ -46,13 +46,13 @@ It is important to note that the main method starts the server. This server is w
 ![Image](lab2_8.jpg)<br>
 **1. After `/add-message`**<br>
 *Which methods in your code are called?*<br>
-The relevant method that is called to get this output is the `handleRequest` method.<br>
+The `main` method of *StringServer* is called where the path is recognized by the `handleRequest` method. The `handleRequest` method is called every time the specific URL is requested into the browser.<br>
 <br>
 *What are the relevant arguments to those methods, and the values of any relevant fields of the class?*<br>
-Revelvant arguments to this method, and the values of any relevant fields of the class includes `add-message` of the pathway, additionally the `=s` in the query, our print value (what will be printed, in this case our value is "Nicki Minaj", and our URL.<br>
+Relevant arguments to this method, and the values of any relevant fields of the class includes `add-message` of the pathway, additionally the `=s` in the query, our print value (what will be printed), in this case our value is `Nicki Minaj`, and our URL.<br>
 <br>
 *How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.*<br>
-The value of printed value changes.  
+The "printOut" field is updated to include the latter portion of the query (in this example, `Nicki Minaj`) because both a valid path and query were provided in the request. Furthermore, the "printOut" field then becomes `Nicki Minaj` + `\n`. Furthermore, as a part of the handleRequest method, the `parameters` field is modified to {"s", "Nicki Minaj"}, which corresponds to the query in the URL.
 
 
 ![Image](lab2_10.jpg) <br>
@@ -64,7 +64,7 @@ The relevant method that is called to get this output is the `handleRequest` met
 Revelvant arguments to this method, and the values of any relevant fields of the class includes `add-message` of the pathway, additionally the "s" in the query, our print value (what will be printed, in this case our value is "Nicki Minaj", and our URL.<br>
 <br>
 *How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.*<br>
-The value of printed value changes. The url's is pass through the if-statements where the `add-message` path and the `=s` query is identified. From there the string is updated and printed with a new line.
+Similar to the last question of question 1, since both a valid path and query were provided in the request, the "printOut" field is updated to include the latter portion of the query. This is such that it now contains both `Nicki Minaj` and `Is The Queen of Rap` where the "printOut" field is `Nicki Minaj\n Is the Queen of Rap\n`. It is also important to mention that the `parameters` within the `handleRequest` method is then updated to a split query with individual key-value pairs of {"s", "Is the Queen of Rap"}.
 
 ## Part 2
 1. A failure-inducing input for the buggy program I implemented was:<br>
@@ -72,8 +72,8 @@ The value of printed value changes. The url's is pass through the if-statements 
   //two added tests
 @Test
 public void testReversed1() {
-  int[] input1 = {1,1,1};
-  assertArrayEquals(new int[]{1,1,1}, ArrayExamples.reversed(input1));
+  int[] input1 = {2,4,6};
+  assertArrayEquals(new int[]{6,4,2}, ArrayExamples.reversed(input1));
 }
 ```
 <br>
@@ -83,8 +83,8 @@ Here our first `int` array has the elements of `{1,1,1}` with the expected outpu
 ```ruby
 @Test
 public void testReversed2() {
-  int[] input2 = {2,4,6};
-  assertArrayEquals(new int[]{6,4,2}, ArrayExamples.reversed(input2));
+  int[] input2 = {1,1,1};
+  assertArrayEquals(new int[]{1,1,1}, ArrayExamples.reversed(input2));
 }
 ```
 <br>
@@ -95,6 +95,27 @@ public void testReversed2() {
 *After* <br>
 ![Image](lab3_5.jpg)<br>
 <br>
-
+**The Bug Identified**<br>
+The following is the block of code that contained the bug:<br>
+```ruby
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+        arr[i] = arr[arr.length - i - 1];
+    }
+}
+```
+In this implementation, the bug can be found in the for-loop that iterated `arr`. The method iterates over the entire list (`for(int i = 0; i < arr.length; i += 1)`) and substitutes each element with its corresponding element from the opposing element (`arr[i] = arr[arr.length - i - 1];`). A potential issue with this approach is that for any array greater than length 1, once the code reaches the halfway point, it replaces the second half of the array with the updated first half, resulting in the overwriting of the already modified values.
+<br>
+The following code is the corrected implementation of the code:
+```ruby
+static void reverseInPlace(int[] arr) {
+    int temp;
+    for(int i = 0; i < arr.length/2; i += 1) {
+        temp = arr[i]
+        arr[i] = arr[arr.length - i - 1] = temp;
+    }
+}
+```
+Here, through the implementation of `temp`, the values of `arr[i]` is saved such that it can be saved to the opposing element (`arr[i] = arr[arr.length - i - 1];`). Additionally, the for-loop has been changed such that rather than going through the entire array, it will iterate through only half of the array (`for(int i = 0; i < arr.length/2; i += 1)`) highlighted by `i < arr.length/2`. 
 ## Part 3
 In this lab, I learned how to identify symptoms. I also learned the interworkings of servers and how to create a web server of my own. This includes writing pathways to the URL.
